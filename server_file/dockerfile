@@ -1,11 +1,13 @@
 FROM screamingjoypad/BASENAME
-# using screamingjoypad base image
-MAINTAINER screamingjoypad
+#TODO - changee this BASNAME to the actual docker hub location/name of the bas image
 
-# expose the following ports on the contianer
+# The only thing that this image needs to do is
+# expore network port 1099 and 50000, this is how the 
+# Serveer node communicates with the Master nodes
 EXPOSE 1099 50000
 
-# set the application to run at start of container
+# Here we will start the JMeter-server app to start
+# whenever the image starts.
 ENTRYPOINT /jmeter/apache-jmeter-3.3/bin/jmeter-server \
                         -Dserver.rmi.localport=50000 \
                         -Dserver_port=1099
