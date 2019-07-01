@@ -1,6 +1,7 @@
+#TODO - changee this BASNAME to the actual docker hub location/name of the bas image
 FROM screamingjoypad/BASENAME
-# using the screamingjoypad base image
-MAINTAINER screamingjoypad
 
-# expose port 6000 on the container
+# The only thing that this image needs to do is
+# expore network port 60000, this is how the 
+# Master node communicates with the Server nodes
 EXPOSE 60000
