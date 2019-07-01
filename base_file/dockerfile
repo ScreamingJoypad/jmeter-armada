@@ -1,12 +1,15 @@
-# Use Java 8 slim JRE
-FROM openjdk:8-jre-slim
-# open jdk dockerfile here: https://github.com/docker-library/openjdk/blob/86918ee28d383e7af63f535a2558040dce141099/8/jre/slim/Dockerfile
-MAINTAINER screamingjoypad
+# JMeter Armada Project dockerfile - BASE image
+# Built by and maintained by ScreamingJoypad on github
+# Latest versions and full readme can be found on https://github.com/ScreamingJoypad/jmeter-armada
+# For short term support please reachout on Twitter @mikesmith_sh
 
-# jmeter version in use
+# open jdk dockerfile here: https://github.com/docker-library/openjdk/blob/86918ee28d383e7af63f535a2558040dce141099/8/jre/slim/Dockerfile
+FROM openjdk:8-jre-slim 
+
+# JMeter version to install...
 ARG JMETER_VERSION=3.3
 
-# install untilities like wget, telnet and unzip
+# Here we install helpful utilities like WGET, Telnet and Unzip...
 RUN apt-get clean && \
     apt-get update && \
     apt-get -qy install \
@@ -15,18 +18,23 @@ RUN apt-get clean && \
                 iputils-ping \
                 unzip
 
-# install jmeter
+# Here we get thhe previously mentioned version numbeer of JMeeter and install it...
 RUN   mkdir /jmeter \
       && cd /jmeter/ \
       && wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-3.3.tgz \
       && tar -xzf apache-jmeter-3.3.tgz \
       && rm apache-jmeter-3.3.tgz
 
-# add plugins
+# At this point we would add plugins
+# I'm loooking to deprecate this in leiu of an HTML dashboard or packaged dashboarding application to sit alongside of this distribution...
 #ADD jmeter-plugins/lib /jmeter/apache-jmeter-$JMETER_VERSION/lib
 
-# Set JMeter Home
+# Set JMeter Home directory...
 ENV JMETER_HOME /jmeter/apache-jmeter-3.3/
 
-# Add JMeter to the Path
+# Add JMeter to the PATH...
 ENV PATH $JMETER_HOME/bin:$PATH
+
+# Nothing else happens at this point in this file
+# thhis is meearly the barest image that the others can build from
+# therefore giving me less administrative hangovers
