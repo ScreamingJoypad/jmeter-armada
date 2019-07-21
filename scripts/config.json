@@ -1,0 +1,22 @@
+{
+    "SpotPrice": "0.21",
+    "TargetCapacity": 3,
+    "IamFleetRole": "arn:aws:iam::133060985476:role/AmazonEC2SpotFleetRole2",
+    "LaunchSpecifications": [
+        {
+            "ImageId": "ami-026c8acd92718196b",
+            "KeyName": "jmeter-key",
+            "SecurityGroups": [
+                {
+                    "GroupId": "sg-f185db83"
+                }
+            ],
+            "InstanceType": "t2.micro",
+            "UserData": "IyEvYmluL2Jhc2gNCiMgVXNlciBkYXRhIGZvciB0aGUgSm1ldGVyIEFybWFkYSBzZXJ2ZXIgRUMyIGluc3RhbmNlIHdpdGhpbiB0aGUgc3BvdCBmbGVldA0KDQojc2V0IGlwIGFzIGVudiB2YXIgLSB0aGlzIGlzIGltcG9ydGFudCBmb3IgcnVubmluZyB0aGUgam1ldGVyIHRlc3RzIGluIGEgZGlzdHJpYnV0ZWQgc3R5bGUNCmVjaG8gImV4cG9ydCBMT0NBTElQPSQoaG9zdG5hbWUgLWkpIiA+PiAvZXRjL2Jhc2guYmFzaHJjDQoNCnNvdXJjZSAvZXRjL2Jhc2guYmFzaHJjDQoNCiMgdXBkYXRlIHRoZSBpbnN0YWxsIG9uIHRoZSB1YnVudHUgaW1hZ2UNCnN1ZG8gYXB0LWdldCB1cGRhdGUgLXkNCg0KIyBpbnN0YWxsIERvY2tlcidzIGNlcnRpZmljYXRlIGV0Yw0Kc3VkbyBhcHQtZ2V0IGluc3RhbGwgXA0KICAgIGFwdC10cmFuc3BvcnQtaHR0cHMgXA0KICAgIGNhLWNlcnRpZmljYXRlcyBcDQogICAgY3VybCAteSBcDQogICAgc29mdHdhcmUtcHJvcGVydGllcy1jb21tb24NCg0KIyBhZGQgZG9ja2VycyBvZmZpY2lhbCBHUEcga2V5DQpjdXJsIC1mc1NMIGh0dHBzOi8vZG93bmxvYWQuZG9ja2VyLmNvbS9saW51eC91YnVudHUvZ3BnIHwgc3VkbyBhcHQta2V5IGFkZCAtDQoNCiMgc2V0IHVwIHRoZSBzdGFibGUgcmVwb3NpdG9yeQ0Kc3VkbyBhZGQtYXB0LXJlcG9zaXRvcnkgXA0KICAgImRlYiBbYXJjaD1hbWQ2NF0gaHR0cHM6Ly9kb3dubG9hZC5kb2NrZXIuY29tL2xpbnV4L3VidW50dSBcDQogICAkKGxzYl9yZWxlYXNlIC1jcykgXA0KICAgc3RhYmxlIg0KDQojIHVwZGF0ZSBhZ2FpbiBub3cgd2l0aCBhZGRlZCByZXBvDQpzdWRvIGFwdC1nZXQgdXBkYXRlIC15DQoNCiMgSW5zdGFsbCBEb2NrZXIgQ0UgDQpzdWRvIGFwdC1nZXQgaW5zdGFsbCBkb2NrZXItY2UgLXkNCg0KIyBpbnN0YWxsIGRvY2tlci1jb21wb3NlIChpbiBjYXNlIHlvdSBuZWVkIHRvIG1ha2UgYSBkb2NrZXItY29tcG9zZSBmaWxlKQ0Kc3VkbyBhcHQtZ2V0IGluc3RhbGwgZG9ja2VyLWNvbXBvc2UgLXkNCg0KIyBtYWtlIGRvY2tlciBncm91cCBpZiBub3QgYWxyZWFkeSBjcmVhdGVkDQpzdWRvIGdyb3VwYWRkIGRvY2tlcg0KDQojIG1ha2UgdWJ1bnR1IHVzZXIgcGFydCBvZiBkb2NrZXIgZ3JvdXANCnN1ZG8gdXNlcm1vZCAtYUcgZG9ja2VyIHVidW50dQ0KDQojIGluc3RhbGwgaHRvcCAodGhpcyBpcyBmb3Igc3lzdGVtIG1vbml0b3JpbmcgLSB0byB1c2UganVzdCB0eXBlIGluICdodG9wJyBvbiB0aGUgQ0xJKQ0Kc3VkbyBhcHQgaW5zdGFsbCBodG9wDQoNCnN1ZG8gZG9ja2VyIHJ1biAtZGl0IC1lIExPQ0FMSVA9JChjdXJsIGh0dHA6Ly8xNjkuMjU0LjE2OS4yNTQvbGF0ZXN0L21ldGEtZGF0YS9wdWJsaWMtaXB2NCkgLXAgMTA5OToxMDk5IC1wIDUwMDAwOjUwMDAwIHNjcmVhbWluZ2pveXBhZC9hcm1hZGEtc2VydmVyIC9iaW4vYmFzaA0K",
+            "SubnetId": "subnet-133db377",
+            "IamInstanceProfile": {
+                "Arn": "arn:aws:iam::133060985476:instance-profile/MikesSpotFleet2"
+            }
+        }
+    ]
+  }

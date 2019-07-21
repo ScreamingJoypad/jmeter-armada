@@ -1,0 +1,50 @@
+#!/bin/bash
+# User data for the Jmeter Armada server EC2 instance within the spot fleet
+# This information will be base64 encoded and used in the 'config.json file
+
+
+# set ip as env var - this is important for running the jmeter tests in a distributed style
+echo "export LOCALIP=$(hostname -i)" >> /etc/bash.bashrc
+
+source /etc/bash.bashrc
+
+# update the ubuntu OS
+
+sudo apt-get update -y
+
+# install Docker's certificate...
+
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl -y \
+    software-properties-common
+
+# add dockers official GPG key
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+# set up the stable repository
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+
+# update again now with added repo
+sudo apt-get update -y
+
+# Install Docker CE 
+sudo apt-get install docker-ce -y
+
+# install docker-compose (in case you need to make a docker-compose file)
+sudo apt-get install docker-compose -y
+
+# make docker group if not already created
+sudo groupadd docker
+
+# make ubuntu user part of docker group
+sudo usermod -aG docker ubuntu
+
+# install htop (this is for system monitoring - to use just type in 'htop' on the CLI)
+sudo apt install htop
+
+sudo docker run -dit -e LOCALIP=$(curl http://169.254.169.254/latest/meta-data/public-ipv4) -p 1099:1099 -p 50000:50000 screamingjoypad/armada-server /bin/bash
